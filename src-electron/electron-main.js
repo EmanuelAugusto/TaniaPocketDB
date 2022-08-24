@@ -17,7 +17,7 @@ try {
 
 let mainWindow;
 
-function createWindow() {
+function createWindow() { 
   /**
    * Initial window options
    */
@@ -62,12 +62,13 @@ app.on("window-all-closed", () => {
 });
 
 ipc.on("invokeAction", async (event, data) => {
-  var mysql = require("mysql");
+  var mysql = require("mysql2");
 
   const con = mysql.createConnection({
-    host: data.sql.address,
-    user: data.sql.user,
-    password: data.sql.password,
+    host     : 'localhost',
+    user     : 'root',
+    password : 'root',
+    database : 'DB_App_00',
   });
 
   con.connect(function (err) {
@@ -90,11 +91,13 @@ ipc.on("invokeAction", async (event, data) => {
 });
 
 ipc.on("testConnection", (event, data) => {
-  var mysql = require("mysql");
+  var mysql = require("mysql2");
+
   var con = mysql.createConnection({
-    host: data.address,
-    user: data.user,
-    password: data.password,
+    host     : 'localhost',
+    user     : 'root',
+    password : 'root',
+    database : 'DB_App_00',
   });
 
   con.connect(function (err, result) {

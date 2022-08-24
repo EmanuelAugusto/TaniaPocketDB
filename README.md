@@ -1,6 +1,8 @@
 # TaniaDbPocket (taniadbpocket)
 
-Sample SGBD
+SGBD
+
+<img src="PRINT.png"/>
 
 ## Install the dependencies
 ```bash
@@ -11,12 +13,3 @@ yarn
 ```bash
 quasar dev
 ```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
